@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="hu">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BANDI honlapja</title>
   <link rel="stylesheet" href="honlap.css">
 </head>
+
 <body>
-  <div class="projects">
+  <div class="container">
+
 
     <div class="card">
       <picture>
@@ -15,6 +18,16 @@
         <source srcset="img/golyok.webp" type="image/webp">
         <img src="img/golyok.jpg" alt="Töltött golyók előnézet">
       </picture>
+      <div class="card-text">
+        <h2 class="card-title">Szimuláció</h2>
+        <p class="card-subtitle">Elektromosan töltött golyók</p>
+        <div class="card-desc">Képzeljük el, hogy golyókat feltöltünk elektromossággal. 
+          Azonos mennyiségű és előjelű töltést kapnak. 
+          Ebben az esetben minden golyó taszítja a másikat. 
+          Ez önmagában nem túl érdekes, mert elszállnának a végtelenbe.
+           Viszont, ha minden golyót rákötünk egy gumiszálra, ami egy központi helyre próbálja visszahúzni őket,
+           akkor a taszítóerők és a visszahúzóerők egyensúlyba kerülnek.</div>
+      </div>
     </div>
 
     <div class="card">
@@ -33,8 +46,10 @@
       </picture>
     </div>
 
+
   </div>
 
-  <script src="honlap.js"></script>
+
 </body>
+
 </html>

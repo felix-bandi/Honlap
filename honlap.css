@@ -1,3 +1,21 @@
+.card-btn {
+  margin: 1.2em auto 0 auto;
+  display: block;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #0f75d4 0%, #bce40b 100%);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.card-btn:hover {
+  background: linear-gradient(90deg, #bce40b 0%, #0f75d4 100%);
+  transform: scale(1.07);
+}
 .card-desc {
   margin: 0.5em 0 0 0;
   font-size: 0.98em;
@@ -51,10 +69,10 @@ body {
   transition: box-shadow 0.3s, border-color 0.3s;
   border-radius: 24px;
   box-shadow: 8px 8px 20px rgba(7, 28, 223, 0.2);
-  width: 28vw;
-  max-width: 400px;
-  min-width: 220px;
-  height: 70vh;
+  width: 34vw;
+  max-width: 540px;
+  min-width: 280px;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;

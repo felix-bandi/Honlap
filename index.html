@@ -5,12 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BANDI honlapja</title>
-  <link rel="stylesheet" href="honlap.css">
+  <link rel="stylesheet" href="honlap-desktop.css" media="(min-width: 901px)">
+  <link rel="stylesheet" href="honlap-mobile.css" media="(max-width: 900px)">
 </head>
 
 <body>
+  <div class="desktop-header">
+    <h1>BANDI honlapja</h1>
+    <p class="desktop-desc">Szimulációk, áramkörrajzoló, készletkezelő és további projektek</p>
+  </div>
   <div class="container">
-
+    <div class="card intro-card">
+      <div class="card-text">
+        <h2 class="card-title">Üdvözöllek!</h2>
+        <p class="card-subtitle">Ez a BANDI honlapja</p>
+        <div class="card-desc">
+          Itt szimulációkat, áramkörrajzolót, készletkezelőt és további projekteket találsz. Lapozz jobbra!
+        </div>
+        <button class="card-btn" onclick="window.location.href='/ToltottGolyok/index.html'">Indítás</button>
+      </div>
+    </div>
 
     <div class="card">
       <picture>

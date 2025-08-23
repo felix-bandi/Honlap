@@ -1,0 +1,61 @@
+/* alap reset + scroll off */
+html,body{height:100%;margin:0}
+body{overflow:hidden;background:#f5f7fa}
+
+/* desktop fejléct rejtsük mobilon */
+.desktop-header{display:none}
+
+.container{
+  height:calc(var(--vh, 1vh)*100); /* JS fallback */
+  display:grid;                   /* egyszerű középre helyezéshez */
+  align-items:center;
+  padding-block: var(--gap);
+}
+@supports (height: 100dvh){
+  .container{
+    height: max(100dvh, calc(var(--vh, 1vh) * 100));
+  }
+}
+.cards{
+  display: grid;
+  grid-auto-flow: column;                            /* bal→jobb */
+  grid-auto-columns: clamp(16rem, 85vw, 24rem);      /* kártyaszélesség */
+  gap: var(--gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-inline: var(--gap);
+  margin-inline: auto;
+
+  /* jó mobil-élmény */
+  scroll-snap-type: x mandatory;     /* kártyánként ugrik */
+  scroll-padding-inline: var(--gap);
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;               /* csak vízszintes gesztus */
+}
+.cards{
+  -ms-overflow-style: none;   /* IE/Edge régi */
+  scrollbar-width: none;      /* Firefox */
+}
+.cards::-webkit-scrollbar{ display:none } /* WebKit/Chromium */
+.cards{ scroll-snap-type: x proximity; }    /* volt: mandatory */
+.card{
+  scroll-snap-align: center;         /* középre pattan */
+  border-radius: 12px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0 0 1px #dde2ea, 0 10px 30px rgba(0,0,0,.08);
+}
+.card{  scroll-snap-align: center; }
+.card img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:10px;
+}
+
+/* --- DIAG: kényszerített láthatóság --- */
+.cards { background: #eceff3; }              /* hogy lásd a sávot */
+.card  { background: #fff; color:#111 !important; }
+.card *{ color: inherit !important; opacity: 1 !important; }
+.card img{ display:block; width:100%; height:auto; background:#ddd; }

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BANDI honlapja</title>
   <link rel="stylesheet" href="honlap-desktop.css" media="(min-width: 901px)">
-  <link rel="stylesheet" href="honlap-mobile.css" media="(max-width: 900px)">
+  <link rel="stylesheet" href="css-first.css" media="(max-width: 900px)">
 </head>
 
 <body>
@@ -14,60 +14,65 @@
     <h1>BANDI honlapja</h1>
     <p class="desktop-desc">Szimulációk, áramkörrajzoló, készletkezelő és további projektek</p>
   </div>
+
   <div class="container">
-    <div class="card intro-card">
-      <div class="card-text">
-        <h2 class="card-title">Üdvözöllek!</h2>
-        <p class="card-subtitle">Ez a BANDI honlapja</p>
-        <div class="card-desc">
-          Itt szimulációkat, áramkörrajzolót, készletkezelőt és további projekteket találsz. Lapozz jobbra!
+    <div class="cards">
+
+      <div class="card intro-card">
+        <div class="card-text">
+          <h2 class="card-title">Üdvözöllek!</h2>
+          <p class="card-subtitle">Ez a Bandi honlapja</p>
+          <div class="card-desc">
+            Itt szimulációkat, áramkörrajzolót, készletkezelőt és további projekteket találsz. Lapozz jobbra!
+          </div>
+          <!-- Indítógomb csak a többi kártyán jelenik meg -->
         </div>
-        <button class="card-btn" onclick="window.location.href='/ToltottGolyok/index.html'">Indítás</button>
       </div>
-    </div>
 
-    <div class="card">
-      <picture>
-        <source srcset="img/golyok.avif" type="image/avif">
-        <source srcset="img/golyok.webp" type="image/webp">
-        <img src="img/golyok.jpg" alt="Töltött golyók előnézet">
-      </picture>
-      <div class="card-text">
-        <h2 class="card-title">Szimuláció</h2>
-        <p class="card-subtitle">Elektromosan töltött golyók</p>
-        <div class="card-desc">Képzeljük el, hogy golyókat feltöltünk elektromossággal. 
-          Azonos mennyiségű és előjelű töltést kapnak. 
-          Ebben az esetben minden golyó taszítja a másikat. 
-          Ez önmagában nem túl érdekes, mert elszállnának a végtelenbe.
-           Viszont, ha minden golyót rákötünk egy gumiszálra, ami egy központi helyre próbálja visszahúzni őket,
-           akkor a taszítóerők és a visszahúzóerők egyensúlyba kerülnek.
-           A középpontban is elhelyezünk egy golyót - persze, hogy ezt is feltöltjük.           
-           Még érdekesebbé válik a dolog, ha van egy olyan golyónk, amit szabadon mozgathatunk a rendszerben - 
-           (véletlenül ez is fel lenne töltve).
+      <div class="card">
+        <picture>
+          <source srcset="img/golyok.avif" type="image/avif">
+          <source srcset="img/golyok.webp" type="image/webp">
+          <img src="img/golyok.jpg" alt="Töltött golyók előnézet">
+        </picture>
+        <div class="card-text">
+          <h2 class="card-title">Szimuláció</h2>
+          <p class="card-subtitle">Elektromosan töltött golyók</p>
+          <div class="card-desc">Képzeljük el, hogy golyókat feltöltünk elektromossággal.
+            Azonos mennyiségű és előjelű töltést kapnak.
+            Ebben az esetben minden golyó taszítja a másikat.
+            Ez önmagában nem túl érdekes, mert elszállnának a végtelenbe.
+            Viszont, ha minden golyót rákötünk egy gumiszálra, ami egy központi helyre próbálja visszahúzni őket,
+            akkor a taszítóerők és a visszahúzóerők egyensúlyba kerülnek.
+            A középpontban is elhelyezünk egy golyót - persze, hogy ezt is feltöltjük.
+            Még érdekesebbé válik a dolog, ha van egy olyan golyónk, amit szabadon mozgathatunk a rendszerben -
+            (véletlenül ez is fel lenne töltve).
+          </div>
+          <button class="card-btn" onclick="window.location.href='./ToltottGolyok/index.html'">Indítás</button>
         </div>
-        <button class="card-btn" onclick="window.location.href='/ToltottGolyok/index.html'">Indítás</button>
       </div>
+
+      <div class="card">
+        <picture>
+          <source srcset="img/twist.avif" type="image/avif">
+          <source srcset="img/twist.webp" type="image/webp">
+          <img src="img/twist.jpg" alt="Áramkörrajzoló előnézet">
+        </picture>
+      </div>
+
+      <div class="card">
+        <picture>
+          <source srcset="img/leltar.avif" type="image/avif">
+          <source srcset="img/leltar.webp" type="image/webp">
+          <img src="img/leltar.jpg" alt="Készlet / számla">
+        </picture>
+      </div>
+
     </div>
-
-    <div class="card">
-      <picture>
-        <source srcset="img/twist.avif" type="image/avif">
-        <source srcset="img/twist.webp" type="image/webp">
-        <img src="img/twist.jpg" alt="Áramkörrajzoló előnézet">
-      </picture>
-    </div>
-
-    <div class="card">
-      <picture>
-        <source srcset="img/leltar.avif" type="image/avif">
-        <source srcset="img/leltar.webp" type="image/webp">
-        <img src="img/leltar.jpg" alt="Készlet / számla">
-      </picture>
-    </div>
-
-
   </div>
 
+  
+  <script src="js-first.js" defer></script>
 
 </body>
 

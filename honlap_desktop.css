@@ -1,0 +1,124 @@
+/* ===== DESKTOP (901px+) – vertikális lista, széles kártyák ===== */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: auto;                 /* desktopon függőleges scroll az oldalé */
+  background: #f5f7fa;
+}
+
+/* Fejléc desktopon látszik */
+.desktop-header { 
+  display: block; 
+  padding: 2rem 0 1rem;
+  text-align: center;
+}
+.intro-card {
+  display: none !important;
+}
+/* A teljes oldal tartója */
+.container {
+  width: min(1100px, 92vw);       /* középre zárt, kényelmes szélesség */
+  margin: 0 auto;
+  padding: 0 0 4rem;
+}
+
+/* A kártyák listája – egymás alatt */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;                   /* kártyák közti távolság */
+  overflow: visible;              /* nincs vízszintes lapozás desktopon */
+  scroll-snap-type: none;
+  padding: 0;
+  background: transparent;
+}
+
+/* Egy „slide” = egy listaelem a sorban */
+.slider {
+  flex: 0 0 auto;                 /* a tartalom magassága szerint nő */
+  height: auto;
+  display: block;
+  scroll-snap-align: none;
+}
+
+/* A kártya: bal képoszlop + jobb szövegoszlop */
+.card {
+  display: grid;
+  grid-template-columns: 40% 1fr; /* bal: kép, jobb: szöveg */
+  align-items: stretch;
+
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.08);
+  overflow: hidden;               /* kép szépen maszkolva a sarkoknál */
+}
+
+/* Képblokk – a <picture> + img kitölti a bal hasábot */
+.card picture,
+.card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.card img {
+  object-fit: cover;              /* szépen kitölt, nem torzul */
+}
+
+/* Szövegoszlop */
+.card .card-text {
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.card .card-title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.card .card-subtitle {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.card .card-desc {
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+/* Gomb (ha van) */
+.card .card-btn {
+  justify-self: start;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Finom hover desktopon */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+/* Ha van olyan kártya, amin nincs kép (pl. intro-card),
+   akkor a jobb oldali szöveg menjen át teljes szélességre. */
+.card.intro-card {
+  display: block;                 /* egyszerű egysávos elrendezés */
+  padding: 1.5rem;
+}
+
+/* Extra: nagyon széles monitoron a kép legyen kicsit keskenyebb */
+@media (min-width: 1400px) {
+  .card { grid-template-columns: 36% 1fr; }
+}

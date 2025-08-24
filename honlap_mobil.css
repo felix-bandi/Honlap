@@ -33,7 +33,7 @@ body {
   scroll-snap-type: x mandatory;
   gap: 0;
   padding: 0;
-  background-color: aquamarine;
+  background-color: rgb(18, 158, 214);
 }
 
 .slider {

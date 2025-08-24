@@ -17,10 +17,6 @@ body {
   text-align: center;
 }
 
-.intro-card {
-  
-}
-
 .container {
   height: 100%;
   width: 100%;
@@ -41,34 +37,48 @@ body {
 }
 
 .slider {
-  flex: 0 0 100%;
+  flex: 0 0 80%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   scroll-snap-align: none;
 }
 
+.card.intro-card {
+  display: block;
+}
+
 .card {
   box-sizing: border-box;
   width: 86%;
   height: 90%;
-  border-radius: 12px;
+  border-radius: 3rem;
   background:
+    linear-gradient(to right, orange, purple) border-box,
     radial-gradient(circle at center, rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5)) padding-box,
-    linear-gradient(to right, red, blue) padding-box,
-    linear-gradient(to right, orange, purple) border-box;
-  border: 3vw solid transparent;
-  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
-}
+    linear-gradient(to right, red, blue) padding-box;
 
+  border: 1rem solid transparent;
+  padding: 1rem;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .card picture {
-  
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .card img {
+  height: 90%;
+  width: auto;
+  margin: 1rem;
   object-fit: cover;
-  /* szépen kitölt, nem torzul */
   display: block;
+  border-radius: 1rem;
 }
 
 .card .card-text {

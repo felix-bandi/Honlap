@@ -8,18 +8,12 @@ body {
 
 body {
   overflow: auto;
-  background: #6398e7;
-}
-
-.desktop-header {
-  display: block;
-  padding: 2rem 0 1rem;
-  text-align: center;
+  background: linear-gradient(135deg, #6398e7 0%, #f7e94c 100%);
 }
 
 .container {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -37,9 +31,9 @@ body {
 }
 
 .slider {
-  flex: 0 0 80vh;
-  height: 80vh;
+  flex: 0 0;
   width: 100vw;
+  height: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,15 +46,14 @@ body {
 
 .card {
   box-sizing: border-box;
-  width: 84vw;
-  height: 75vh;
-  
-  background:
-    linear-gradient(to right, rgba(224, 240, 9, 0.877), rgba(162, 163, 71, 0.5)) border-box,
-    radial-gradient(circle at center, rgba(221, 10, 133, 0.5), rgba(210, 136, 233, 0.5)) padding-box,
-    linear-gradient(to right, rgba(197, 240, 6, 0.1), rgba(158, 238, 28, 0.5)) border-box;
+  width: 90%;
+  height: 90%;
 
-  border: 1vh solid rgba(0, 0, 255, 0.6);
+  background:
+    linear-gradient(to right, rgba(197, 240, 6, 0.1), rgba(158, 238, 28, 0.5)) padding-box;
+
+  border: 1vh solid transparent;
+  
   border-radius: 6vh;
   padding: 3vh;
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
@@ -87,9 +80,13 @@ body {
 
 .card .card-text {
   flex: 1 1 0;
+  height: 90%;
   padding: 1.25rem 1.5rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+  /* overflow-y: auto; */
+  /* Commenting out the overflow-y property */
 }
 
 .card .card-title {
@@ -99,6 +96,7 @@ body {
 }
 
 .card .card-subtitle {
+  font-size: 1.2rem;
   margin: 0;
   opacity: 0.8;
 }
@@ -106,6 +104,8 @@ body {
 .card .card-desc {
   margin-top: 0.25rem;
   line-height: 1.5;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 /* Gomb (ha van) */
@@ -118,5 +118,14 @@ body {
   cursor: pointer;
 }
 
-/*.slider { box-shadow: inset 0 0 0 10px #c725b9; }
-.card   { box-shadow: inset 0 0 0 10px #f0f1f5; }*/
+/*.cards {
+  box-shadow: inset 0 0 0 3px #05d7f3;
+}
+
+.slider {
+  box-shadow: inset 0 0 0 3px #e3f305;
+}
+
+.card {
+  box-shadow: inset 0 0 0 3px #04f110;
+}*/

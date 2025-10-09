@@ -21,13 +21,26 @@ body {
 .cards {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: auto; /* Magasság automatikus beállítása a tartalomhoz */
   flex-direction: column;
-  gap: 0;
-  overflow: auto;
+  gap: 0; /* Gap teljes eltávolítása */
+  padding-bottom: 5vh; /* Utolsó kártya alatti hézag */
+  overflow-y: auto; /* Csak függőleges görgetés engedélyezése */
+  overflow-x: hidden; /* Vízszintes görgetés tiltása */
   scroll-snap-type: none;
   padding: 0;
   background: transparent;
+  border: none; /* Segédvonalak eltávolítása */
+}
+
+.cards > .slider {
+  margin-bottom: 10vh !important; /* Kártyák közötti hézag biztosítása */
+  border: none; /* Segédvonalak eltávolítása */
+}
+
+.cards > .slider:last-child {
+  margin-bottom: 5vh !important; /* Utolsó kártya alatti hézag biztosítása */
+  border: none; /* Segédvonalak eltávolítása */
 }
 
 .slider {
@@ -39,18 +52,31 @@ body {
   align-items: center;
   scroll-snap-align: none;
   background: transparent;
+  box-sizing: border-box; /* Padding és border figyelembevétele a méretezésnél */
+  overflow: visible; /* Tartalom elrejtésének megszüntetése */
 }
 
 .card.intro-card {
   display: block;
+  height: auto; /* Magasság automatikusan igazodik a tartalomhoz */
+  overflow: visible; /* Scrollbar eltávolítása */
+  margin-top: 5vh; /* Távolság az oldal tetejétől */
 }
 .card.intro-card .card-title {
   text-align: center;
 }
 .card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
-  width: 90%;
-  height: 90%;
+  width: 90%; /* Visszaállítottam az eredeti szélességet */
+  height: auto; /* Magasság automatikusan igazodik a tartalomhoz */
+  min-height: unset; /* Minimális magasság eltávolítása */
+  padding: 3vh; /* Egyenlő belső margók minden oldalon */
+  gap: 2vh; /* A kép és a szöveg közötti hézag */
+  position: relative; /* Biztosítja a belső margók helyes alkalmazását */
 
   background:
     linear-gradient(to right, rgb(213, 226, 21), rgb(132, 26, 158)) border-box;
@@ -58,33 +84,34 @@ body {
   border: 1vh solid rgba(19, 202, 178, 0.5);
   
   border-radius: 6vh;
-  padding: 3vh;
   box-shadow: 0 2px 18px rgba(60, 173, 201, 0.8);
   display: flex;
   flex-direction: row;
   align-items: center;
+  overflow: hidden; /* Kilógó tartalom elrejtése */
 }
 
 .card picture {
-  height: 100%;
+  flex: 0 0 70%; /* A kép szélessége a kártya 70%-a */
+  margin: 2vh; /* Egyenlő hézag minden oldalon a kép körül */
+  height: auto;
   display: flex;
   align-items: center;
 }
 
 .card img {
-  height: 90%;
-  width: auto;
-  max-width: 100%;
-  margin: 3vh;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
   border-radius: 3vh;
 }
 
 .card .card-text {
-  flex: 1 1 0;
-  height: 90%;
-  padding: 1.25rem 1.5rem;
+  flex: 1; /* A szöveges rész rugalmasan alkalmazkodik a fennmaradó helyhez */
+  height: 100%; /* A szöveg magassága igazodik a képhez */
+  overflow-y: auto; /* Függőleges görgetés engedélyezése */
+  padding: 2vh; /* Hézag a szöveg körül */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -94,12 +121,12 @@ body {
 
 .card .card-title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Eredeti: 1.5rem */
   line-height: 1.2;
 }
 
 .card .card-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* Eredeti: 1.2rem */
   margin: 0;
   opacity: 0.8;
 }
@@ -109,6 +136,7 @@ body {
   line-height: 1.5;
   overflow-y: auto;
   max-height: 100%;
+  font-size: 1.1rem; /* Eredeti: nem volt megadva, alapértelmezett */
 }
 
 /* Gomb (ha van) */

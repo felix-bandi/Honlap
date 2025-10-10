@@ -72,8 +72,8 @@ body {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 90%; /* Visszaállítottam az eredeti szélességet */
-  height: auto; /* Magasság automatikusan igazodik a tartalomhoz */
+  width: 90%; 
+  height: auto; 
   min-height: unset; /* Minimális magasság eltávolítása */
   padding: 3vh; /* Egyenlő belső margók minden oldalon */
   gap: 2vh; /* A kép és a szöveg közötti hézag */
@@ -88,7 +88,7 @@ body {
   box-shadow: 0 2px 18px rgba(60, 173, 201, 0.8);
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start; /* A cím teteje igazodjon a kép tetejéhez */
   overflow: hidden; /* Kilógó tartalom elrejtése */
 }
 
@@ -98,6 +98,7 @@ body {
   height: auto;
   display: flex;
   align-items: center;
+  outline: 2px dashed #05d7f3; /* DEBUG: bal hasáb szegélye */
 }
 
 .card img {
@@ -112,12 +113,38 @@ body {
   flex: 1; /* A szöveges rész rugalmasan alkalmazkodik a fennmaradó helyhez */
   height: 100%; /* A szöveg magassága igazodik a képhez */
   overflow-y: auto; /* Függőleges görgetés engedélyezése */
+  /* Scrollbar viselkedés és megjelenés (desktop) */
+  scrollbar-gutter: stable; /* Tartalomtól jobbra fix hely a scroll sávnak */
+  scrollbar-width: thin; /* Firefox: vékonyabb sáv */
+  scrollbar-color: rgba(60,173,201,0.7) transparent; /* Firefox: színek (hüvely, háttér) */
   padding: 2vh; /* Hézag a szöveg körül */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  outline: 2px dashed #e3f305; /* DEBUG: jobb hasáb szegélye */
   /* overflow-y: auto; */
   /* Commenting out the overflow-y property */
+}
+
+/* WebKit/Chromium: egyedi, kerekített és vékonyabb scroll */
+.card .card-text::-webkit-scrollbar {
+  width: 10px;
+}
+
+.card .card-text::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 999px;
+}
+
+.card .card-text::-webkit-scrollbar-thumb {
+  background-color: rgba(60, 173, 201, 0.7);
+  border-radius: 999px;
+  border: 2px solid transparent; /* vékonyabb optikai hatás, kerek szélek */
+  background-clip: padding-box;
+}
+
+.card .card-text:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(60, 173, 201, 0.85);
 }
 
 .card .card-title {

@@ -98,7 +98,7 @@ body {
   height: auto;
   display: flex;
   align-items: center;
-  outline: 2px dashed #05d7f3; /* DEBUG: bal hasáb szegélye */
+  /*outline: 2px dashed #05d7f3; /* DEBUG: bal hasáb szegélye */
 }
 
 .card img {
@@ -113,17 +113,23 @@ body {
   flex: 1; /* A szöveges rész rugalmasan alkalmazkodik a fennmaradó helyhez */
   height: 100%; /* A szöveg magassága igazodik a képhez */
   overflow-y: auto; /* Függőleges görgetés engedélyezése */
+  padding-right: 0; /* a scrollbar marad a szélén */
   /* Scrollbar viselkedés és megjelenés (desktop) */
-  scrollbar-gutter: stable; /* Tartalomtól jobbra fix hely a scroll sávnak */
+  scrollbar-gutter: stable both-edges; /* mindig fenntart helyet a sávnak */
   scrollbar-width: thin; /* Firefox: vékonyabb sáv */
   scrollbar-color: rgba(60,173,201,0.7) transparent; /* Firefox: színek (hüvely, háttér) */
   padding: 2vh; /* Hézag a szöveg körül */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  outline: 2px dashed #e3f305; /* DEBUG: jobb hasáb szegélye */
+  /*outline: 2px dashed #e3f305; /* DEBUG: jobb hasáb szegélye */
   /* overflow-y: auto; */
   /* Commenting out the overflow-y property */
+}
+
+/* A tartalmat toljuk beljebb, ne a scroll-konténert */
+.card .card-text > * {
+  padding-right: 20px;
 }
 
 /* WebKit/Chromium: egyedi, kerekített és vékonyabb scroll */
@@ -164,7 +170,7 @@ body {
   line-height: 1.5;
   overflow-y: auto;
   max-height: 100%;
-  font-size: 1.3rem; /* Eredeti: nem volt megadva, alapértelmezett */
+  font-size: 1.1rem; /* Eredeti: nem volt megadva, alapértelmezett */
 }
 
 /* Gomb (ha van) */
